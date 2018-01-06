@@ -2,10 +2,15 @@ import React from 'react';
 
 export default class App extends React.Component {
 
+    componentDidMount() {
+
+    }
+
     render() {
+        const {content} = this.props;
         return (
             <div>
-                This is a app named 'Reask'
+                { content }
             </div>
         )
     }

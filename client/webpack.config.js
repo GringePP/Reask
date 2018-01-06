@@ -6,9 +6,8 @@ const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const config = {
-
     entry: {
-        main: path.join(__dirname, 'src', 'index.jsx')
+        main: path.join(__dirname, 'src', 'index.jsx'),
     },
     output: {
         path: path.resolve(__dirname, 'build/'),
@@ -34,7 +33,6 @@ const config = {
     resolve: {
         extensions: ['.js', '.jsx', '.scss']
     }
-
 };
 
 module.exports = config;
