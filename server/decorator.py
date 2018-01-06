@@ -1,5 +1,6 @@
 import sqlite3
 import json
+from collections import OrderedDict
 
 
 def db_helper(db_name, mapping_rule):
@@ -8,7 +9,8 @@ def db_helper(db_name, mapping_rule):
             with sqlite3.connect(db_name) as conn:
                 try:
                     raw_data = func(conn=conn, *args, **kw)
-                except Exception:
+                except Exception as e:
+                    print(e)
                     return __common_struct(success=False)
                 if raw_data is None:
                     mapped_data = None
@@ -26,4 +28,4 @@ def __common_struct(result=None, success=True, msg='error'):
         output = {'response': result, 'status': 1, 'message': 'success'}
     else:
         output = {'response': result, 'status': 0, 'message': msg}
-    return json.dumps(output)
+    return json.dumps(OrderedDict(output))

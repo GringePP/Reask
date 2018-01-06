@@ -1,4 +1,5 @@
-from flask import Blueprint
+from flask import Blueprint, request
+from server.songs import songs_dao as dao
 
 songs_blueprint = Blueprint(
     'songs',
@@ -9,4 +10,9 @@ songs_blueprint = Blueprint(
 
 @songs_blueprint.route('/', methods=['GET', 'POST'])
 def collection():
-    pass
+    method = request.method
+    if method == 'GET':
+        return dao.get_songs()
+    elif method == 'POST':
+        body = request.form
+        return dao.add_song(body)
