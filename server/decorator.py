@@ -10,8 +10,7 @@ def db_helper(db_name, mapping_rule):
                 try:
                     raw_data = func(conn=conn, *args, **kw)
                 except Exception as e:
-                    print(e)
-                    return __common_struct(success=False)
+                    return __common_struct(success=False, msg=str(e))
                 if raw_data is None:
                     mapped_data = None
                 else:

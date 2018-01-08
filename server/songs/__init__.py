@@ -1,1 +1,1 @@
-from server.songs.songs_router import songs_blueprint
+from server.songs.songs_blueprint import songs_blueprint
