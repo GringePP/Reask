@@ -5,6 +5,6 @@ export default function reducer(state = {}, action) {
         case GET_SONG_LIST:
             return action;
         default:
-            return action;
+            return {};
     }
 }

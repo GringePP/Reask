@@ -1,16 +1,18 @@
 import App from './App';
-import { GET_SONG_LIST } from '../../actions';
+import { getSongs } from '../../actions';
 import { connect } from "react-redux";
 
-const mapStateToProps = (state) => {
-    if (state.type !== GET_SONG_LIST) return {};
+const mapStateToProps = ({songReducer: state}) => {
+    if (state.isFetching) return {};
     return {
         songList: state.response
     }
 };
 
 const mapDispatchToState = (dispatch) => {
-
+    return {
+        getSongs: () => dispatch(getSongs()),
+    }
 };
 
 
