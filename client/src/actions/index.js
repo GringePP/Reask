@@ -4,6 +4,7 @@ export const GET_SONG_LIST = 'GET_SONG_LIST';
 export const GET_SONG = 'GET_SONG';
 export const ADD_SONG = 'ADD_SONG';
 export const DELETE_SONG = 'DELETE_SONG';
+export const TOGGLE_DIALOG = 'TOGGLE_DIALOG';
 
 const commonRequest = (type, api) => ({dispatch, getState}) => dispatch({type, api});
 

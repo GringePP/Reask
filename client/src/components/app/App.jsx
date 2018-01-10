@@ -1,8 +1,13 @@
 import React from 'react';
 import SongCard from "../songcard";
 import './App.scss';
+import Fab from "../fab/Fab";
+import StoreAwareComponent from "../StoreAware/StoreAwareComponent";
+import { TOGGLE_DIALOG } from "../../actions";
+import Dialog from "../Dialog";
+import AddWindow from "../AddWindow";
 
-export default class App extends React.Component {
+export default class App extends StoreAwareComponent {
 
     componentDidMount() {
         this.props.getSongs();
@@ -24,6 +29,8 @@ export default class App extends React.Component {
                         })
                     }
                 </div>
+                <Fab onClick={ () => this.store.dispatch({type: TOGGLE_DIALOG}) }/>
+                <Dialog content={ <AddWindow/> }/>
             </div>
         )
     }

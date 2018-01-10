@@ -1,0 +1,43 @@
+@import "../../../res/style/base";
+
+.add-window {
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, .2);
+  padding: 20px 20px;
+  border-radius: 5px;
+  text-align: center;
+
+  .title {
+    color: $theme-color;
+    font-family: Consolas, serif;
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  .input-item {
+    margin-top: 10px;
+
+    .input {
+      width: 100%;
+      outline: none;
+      border: 1px solid $theme-color;
+      border-radius: 5px;
+      font-size: 17px;
+      padding: 10px;
+    }
+  }
+
+  .submit {
+    padding: 10px 20px;
+    outline: none;
+    border-radius: 20px;
+    color: white;
+    background-color: $theme-color;
+    border: none;
+    margin: 20px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+}
