@@ -1,7 +1,7 @@
 import React from 'react';
-import SongCard from "../songcard";
+import SongCard from "../SongCard";
 import './App.scss';
-import Fab from "../fab/Fab";
+import Fab from "../Fab/Fab";
 import StoreAwareComponent from "../StoreAware/StoreAwareComponent";
 import { TOGGLE_DIALOG } from "../../actions";
 import Dialog from "../Dialog";
