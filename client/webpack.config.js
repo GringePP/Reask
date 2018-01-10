@@ -10,7 +10,7 @@ const config = {
         main: path.join(__dirname, 'src', 'index.jsx'),
     },
     output: {
-        path: path.resolve(__dirname, 'build/'),
+        path: path.resolve(__dirname, 'build'),
         filename: '[name].bundle.js'
     },
     module: {
@@ -28,7 +28,7 @@ const config = {
         ]
     },
     plugins: [
-        new CleanWebpackPlugin(['build/'])
+        new CleanWebpackPlugin(['build'])
     ],
     resolve: {
         extensions: ['.js', '.jsx', '.scss']

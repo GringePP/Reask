@@ -1,5 +1,6 @@
 import React from 'react';
 import SongCard from "../songcard";
+import './App.scss';
 
 export default class App extends React.Component {
 
@@ -15,8 +16,8 @@ export default class App extends React.Component {
     render() {
         const {songList} = this.props;
         return (
-            <div>
-                <div>
+            <div className='app'>
+                <div className='song-card-list'>
                     {
                         songList && songList.map((item, index) => {
                             return <SongCard key={ index } data={ item }/>

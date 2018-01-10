@@ -11,8 +11,8 @@ export default class SongCard extends React.Component {
                     <div className='poster-img' style={ {backgroundImage: `url(${poster})`} }/>
                 </div>
                 <div className='info'>
-                    <p className='category'>LIGHT MUSIC</p>
-                    <p className='title'>{ title }</p>
+                    <div className='category'>LIGHT MUSIC</div>
+                    <div className='title'>{ title }</div>
                     <div>
                         <span className='by'>by </span>
                         <span className='artist'>{ artist }</span>
