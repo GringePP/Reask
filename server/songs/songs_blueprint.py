@@ -15,7 +15,9 @@ def collection():
     if method == 'GET':
         return dao.get_songs()
     elif method == 'POST':
-        return dao.add_song(request.form)
+        raw_data = request.data
+        data = json.loads(str(raw_data, 'utf-8'))
+        return dao.add_song(data)
     return json.dumps(None)
 
 
