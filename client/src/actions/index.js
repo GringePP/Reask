@@ -56,8 +56,8 @@ export function addTestSong() {
             url: `${API_ROOT}/`,
             method: 'POST',
             body: JSON.stringify({
-                title:'Test Song',
-                artist:'Mindjet',
+                title: 'Test Song',
+                artist: 'Mindjet',
                 poster: 'https://avatars3.githubusercontent.com/u/17674741?s=460&v=4'
             })
         }

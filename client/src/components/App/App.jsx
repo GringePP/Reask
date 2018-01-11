@@ -13,11 +13,6 @@ export default class App extends StoreAwareComponent {
         this.props.getSongs();
     }
 
-    // shouldComponentUpdate() {
-    //     console.log(this.props.songList === undefined);
-    //     return this.props.songList !== undefined;
-    // }
-
     render() {
         const {songList} = this.props;
         return (

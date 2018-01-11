@@ -3,7 +3,6 @@ import { getSongs } from '../../actions';
 import { connect } from "react-redux";
 
 const mapStateToProps = ({songReducer: state}) => {
-    if (state.isFetching) return {};
     return {
         songList: state.response
     }
