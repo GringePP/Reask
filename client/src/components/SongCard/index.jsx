@@ -13,9 +13,9 @@ export default class SongCard extends React.Component {
                 <div className='info'>
                     <div className='category'>LIGHT MUSIC</div>
                     <div className='title'>{ title }</div>
-                    <div>
+                    <div className='artist'>
                         <span className='by'>by </span>
-                        <span className='artist'>{ artist }</span>
+                        <span className='artist-name'>{ artist }</span>
                     </div>
                 </div>
             </div>

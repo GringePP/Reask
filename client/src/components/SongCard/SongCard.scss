@@ -31,18 +31,28 @@
     }
 
     .title {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
       font-size: 17px;
       font-weight: 600;
       margin: 5px 0;
     }
 
-    .by {
-
-    }
-
     .artist {
-      font-weight: 600;
-      color: $theme-color
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      .by {
+
+      }
+
+      .artist-name {
+        font-weight: 600;
+        color: $theme-color
+      }
+
     }
   }
 
