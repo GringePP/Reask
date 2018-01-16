@@ -1,6 +1,44 @@
 # Reask
 Reask is a project developed with React&amp;Flask.
 
+## Try it!
+### Enviroment
+* Python 3.6.x
+* Node 6.11.x
+
+### Restore dependencies
+
+```shell
+# dependencies for python
+pip install -r requirements.txt
+
+cd client
+
+# dependencies for npm
+npm install
+npm install webpack -g
+```
+### Start API service
+
+```shell
+# in project root
+python manage.py runserver
+```
+
+### Bundle frontend project
+
+```shell
+cd client
+
+webpack --progress
+```
+
+### Boom
+
+Open `client/index.html` with your browser and see what happens!
+
+## License
+
 ```
 MIT License
 
@@ -24,5 +62,3 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-
-welcome to Gringe enjoy.
