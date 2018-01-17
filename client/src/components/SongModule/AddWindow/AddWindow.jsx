@@ -1,7 +1,7 @@
 import React from "react";
 import './AddWindow.scss';
-import StoreAwareComponent from "../StoreAware/StoreAwareComponent";
-import { addSong, addTestSong } from "../../actions";
+import StoreAwareComponent from "../../StoreAware";
+import { addSong, addTestSong } from "../../../redux/actions";
 
 let title, artist, poster;
 

@@ -11,4 +11,8 @@ export default class StoreAwareComponent extends React.Component {
         this.store = this.context.store;
     }
 
+    componentDidMount() {
+
+    }
+
 }

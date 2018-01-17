@@ -1,4 +1,4 @@
-import { API_ROOT } from "../constant";
+import { API_ROOT } from "../../constant/index";
 
 export const GET_SONG_LIST = 'GET_SONG_LIST';
 export const GET_SONG = 'GET_SONG';

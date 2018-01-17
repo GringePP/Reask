@@ -1,4 +1,4 @@
-import { TOGGLE_DIALOG } from "../actions";
+import { TOGGLE_DIALOG } from "../actions/index";
 
 let visible = false;
 

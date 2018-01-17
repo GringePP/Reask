@@ -12,7 +12,7 @@ const config = {
     output: {
         path: path.resolve(__dirname, 'build'),
         filename: '[name].bundle.js',
-        publicPath: path.join(__dirname, 'res')
+        publicPath: "build"
     },
     module: {
         loaders: [
@@ -33,6 +33,9 @@ const config = {
     ],
     resolve: {
         extensions: ['.js', '.jsx', '.scss']
+    },
+    devServer: {
+        historyApiFallback: true,
     }
 };
 

@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import Dialog from "./Dialog";
-import { TOGGLE_DIALOG } from "../../actions";
+import { TOGGLE_DIALOG } from "../../redux/actions";
 import React from "react";
 
 const mapStateToProps = ({dialogReducer: state}) => {

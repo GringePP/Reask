@@ -1,30 +1,22 @@
 import React from 'react';
-import SongCard from "../SongCard";
+import { Redirect, Route, Switch } from 'react-router-dom';
 import './App.scss';
-import Fab from "../Fab/Fab";
 import StoreAwareComponent from "../StoreAware/StoreAwareComponent";
-import { TOGGLE_DIALOG } from "../../actions";
 import Dialog from "../Dialog";
-import AddWindow from "../AddWindow";
+import AddWindow from "../SongModule/AddWindow";
+import SongModule from "../SongModule";
+import Desert from "../Desert";
 
 export default class App extends StoreAwareComponent {
 
-    componentDidMount() {
-        this.props.getSongs();
-    }
-
     render() {
-        const {songList} = this.props;
         return (
             <div className='app'>
-                <div className='song-card-list'>
-                    {
-                        songList && songList.map((item, index) => {
-                            return <SongCard key={ index } data={ item }/>
-                        })
-                    }
-                </div>
-                <Fab onClick={ () => this.store.dispatch({type: TOGGLE_DIALOG}) }/>
+                <Switch>
+                    <Route path="/" exact component={ SongModule }/>
+                    <Route path="/404" component={ Desert }/>
+                    <Redirect to={ { pathname: '/404' } }/>
+                </Switch>
                 <Dialog content={ <AddWindow/> }/>
             </div>
         )

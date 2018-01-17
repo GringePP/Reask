@@ -1,4 +1,4 @@
-import { ADD_SONG, GET_SONG_LIST } from '../actions';
+import { ADD_SONG, GET_SONG_LIST } from '../actions/index';
 
 export default function reducer(state = {}, action) {
     console.log(action.type);

@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "pack": "webpack --progress --color",
-    "watch": "webpack --color --watch"
+    "watch": "webpack --color --watch",
+    "dev-server": "webpack-dev-server"
   },
   "author": "Mindjet",
   "license": "ISC",
@@ -20,14 +21,15 @@
     "isomorphic-fetch": "^2.2.1",
     "keymirror": "^0.1.1",
     "node-sass": "^4.7.2",
-    "object-assign": "^4.1.1",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.6",
+    "react-router-dom": "^4.2.2",
     "redux": "^3.7.2",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.19.1",
-    "webpack": "^3.10.0"
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.11.0"
   }
 }
