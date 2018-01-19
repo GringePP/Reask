@@ -1,4 +1,6 @@
 # Reask
+[![Build Status](https://travis-ci.org/GringePP/Reask.svg?branch=master)](https://travis-ci.org/GringePP/Reask)
+
 Reask is a project developed with React&amp;Flask.
 
 ## Try it!
