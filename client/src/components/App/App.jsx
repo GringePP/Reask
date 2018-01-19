@@ -6,14 +6,16 @@ import Dialog from "../Dialog";
 import AddWindow from "../SongModule/AddWindow";
 import SongModule from "../SongModule";
 import Desert from "../Desert";
+import Navbar from "../Nav/Nav";
 
 export default class App extends StoreAwareComponent {
 
     render() {
         return (
             <div className='app'>
+                <Navbar/>
                 <Switch>
-                    <Route path="/" exact component={ SongModule }/>
+                    <Route path="/song" component={ SongModule }/>
                     <Route path="/404" component={ Desert }/>
                     <Redirect to={ { pathname: '/404' } }/>
                 </Switch>
