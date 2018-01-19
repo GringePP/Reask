@@ -20,24 +20,24 @@ cd client
 npm install
 npm install webpack -g
 ```
-### Start API service
+### Start Tornado service
 
 ```shell
 # in project root
-python manage.py runserver
+python manage.py tornado
 ```
 
-### Bundle frontend project
+### Start webpage service
 
 ```shell
 cd client
 
-webpack --progress
+npm run dev-server
 ```
 
 ### Boom
 
-Open `client/index.html` with your browser and see what happens!
+Open `http://localhost:8080/` in your browser and see what happens!
 
 ## License
 

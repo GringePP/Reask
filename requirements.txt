@@ -13,3 +13,4 @@ MarkupSafe==1.0
 olefile==0.44
 protobuf==3.5.0.post1
 Werkzeug==0.13
+tornado==4.5.3
