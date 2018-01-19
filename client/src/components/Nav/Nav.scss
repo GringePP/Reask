@@ -1,0 +1,47 @@
+@import "../../../res/style/base.scss";
+
+.nav {
+  width: 100%;
+  background-color: #fff;
+  margin: 0 auto;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 2;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .1);
+
+  ul {
+    margin: 0 auto;
+    max-width: 960px;
+
+    li {
+      width: 33.333%;
+      float: left;
+      padding: 20px 0 20px;
+      text-align: center;
+      color: #434343;
+      list-style: none;
+
+      .link-active {
+        color: $theme-color;
+        font-weight: 600;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+    }
+
+    &:after {
+      content: "";
+      display: block;
+      height: 0;
+      visibility: hidden;
+      clear: both;
+    }
+
+  }
+
+}
