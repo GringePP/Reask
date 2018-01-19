@@ -5,11 +5,9 @@ node_js:
 
 sudo: false
 
-#branches:
-#  only:
-#    - master
 
 before_script:
+  - pwd
   - cd client
 
 cache:
@@ -17,6 +15,11 @@ cache:
     - "client/node_modules"
 
 script:
+  - pwd
   - echo "No test framework specific now, yet comming soon. \n Run webpack instead."
   - npm i
+  - npm i webpack -g
   - npm run pack
+
+after_success:
+  - echo "Build success!"
