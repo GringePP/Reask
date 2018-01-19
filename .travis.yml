@@ -1,0 +1,22 @@
+language: node_js
+
+node_js:
+  - "6"
+
+sudo: false
+
+#branches:
+#  only:
+#    - master
+
+before_script:
+  - cd client
+
+cache:
+  directories:
+    - "client/node_modules"
+
+script:
+  - echo "No test framework specific now, yet comming soon. \n Run webpack instead."
+  - npm i
+  - npm run pack
