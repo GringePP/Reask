@@ -58,15 +58,15 @@
 
   .delect-hover{
     background: rgba(0,0,0,0.6);
-    height: 40px;
+    height: 100%;
     width: 100%;
     position: absolute;
     bottom: 0;
     text-align: center;
     img{
-          width: 20px;
-    height: 20px;
-    padding-top: 10px;
+        width: 35px;
+        height: 35px;
+        padding-top: 50%;
     }
   }
 

@@ -33,18 +33,15 @@ export default class AddWindow extends StoreAwareComponent {
         return (
             <div className="add-window">
                 <div className='title'>Add Your Song</div>
-                <div className="input-item">
-                    <input onChange={ (e) => this.handleChange(e, 0) } type="text" placeholder='Title:'
-                           className="input"/>
-                </div>
-                <div className="input-item">
-                    <input onChange={ (e) => this.handleChange(e, 1) } type="text" placeholder='Artist:'
-                           className="input"/>
-                </div>
-                <div className="input-item">
-                    <input onChange={ (e) => this.handleChange(e, 2) } type="text" placeholder='Poster:'
-                           className="input"/>
-                </div>
+                {
+                    ['Title','Artist','Poster'].map((item, index) => {
+                        return(
+                            <div className="input-item" key={index}>
+                                <input onChange={ (e) => this.handleChange(e, index) } type="text" placeholder={`${item}:`}
+                                    className="input"/>
+                            </div>)
+                    })
+                }
                 <button className="submit" onClick={ () => this.checkAndAddSong() }>Add Song</button>
                 <button className="submit" onClick={ () => this.store.dispatch(addTestSong()) }>Add Dump Song</button>
             </div>

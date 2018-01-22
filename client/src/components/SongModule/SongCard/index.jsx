@@ -1,20 +1,24 @@
 import React from "react";
 import './SongCard.scss';
+import StoreAwareComponent from "../../StoreAware";
+import {deleteSong} from '../../../redux/actions';
 
-export default class SongCard extends React.Component {
+export default class SongCard extends StoreAwareComponent {
     constructor(props){
         super(props);
         this.state = {
-            isShow: false
+            isShowDelectHover: false
         }
-       // console.log(this);
     }
 
     onMouseHover(e, isShow){
         this.setState({
-            isShow:isShow
+            isShowDelectHover:isShow
         })
-        //console.log(e.target);
+    }
+
+    delectSong(id){
+        this.store.dispatch(deleteSong(id));
     }
 
     render() {
@@ -33,9 +37,9 @@ export default class SongCard extends React.Component {
                     </div>
                 </div>
                 {
-                    this.state.isShow &&
-                    <div className="delect-hover">
-                        <img className="delect-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAMAAACahl6sAAAANlBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC3dmhyAAAAEXRSTlMAwIBAEGDQbyDwsE8woJDf4BlU7xUAAAJvSURBVHja7d3hjqMgFEDhC4IKWtv7/i+7zRqmzUaZse0sYM75a6aTb4BmtA0IERGdoM7aaH6YtX6UKvNRj9YPTmqrM/pKYZC6WvTV+poGxUV9vTBLNUV9p1DNorf6t+ZnV6fvdpEqMvp2VUyuSfUcQxL1qd78OH2uhlXyzDgyRZzVR16KNz055Fhev4pSPPvGkjWaMlI8mxmQA0MixYtvvPV0NUGMpiwQIECAADnStJhvi3avq6aMPdpFv7Kv5Gd55HptOOMk1bRD9ZokXhtvkbWojRdkzWjrnWVE9CxrpD/Ju5Z2CeLaXiVeHnU2mqa6JYW5VPQAnIiIqJXGpVdT4ZcUjjaHcp+9joO1k3wmF8p9hjGkJwyfebHULP85r2t98SdwH5oL6tuGdJqKbUOspgwQIECAANkNCBAgstNkh1F2c976MXvLMbkqIN1V70Un2w0h+0dY9F7wFUBmXevztzOLbHbRtak85Jq9aRhDujxm/1MPxSFz/rcN+Z++aGoqDek0Fb6b5/kXrweiQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgQIAAAQIECBAgrWxLFevZlkpu6fIgG42a6rJnVAZXHDLlD15e8udX9ro2FN/xTMSH7A7cy+rYuezM6qhgMz0R562d8lumz7LbbO0wVrG9YeoEG06uAQECRLIBAQJEsgEBAkSyAQFSGDJ22032n8xvQYzdLJrtrvpuH4JUdBYyECBrQIAAyQfk3s1stHweEsxOdqep2679I0h/pT8rRGjg4py/CgAAAABJRU5ErkJggg==" alt="delect-icon"/>
+                    this.state.isShowDelectHover &&
+                    <div className="delect-hover" onClick={e => this.delectSong(id)}>
+                        <img className="delect-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAMAAACahl6sAAAAOVBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC8dlA9AAAAEnRSTlMAgGDAQDCgIBDw0OBQcN+wn88turXtAAABmUlEQVR42u3dy26DMBRF0WNj88qjyf3/j63UTjpCCQ5wRPeeMvGSZUtMfEVERERE/pVreq1bGWRbfUzxRs8sy8ZHvNv9Kr/qPVaU5FadYlUPeTXeY2VmB6WP1VndXjXW18uoPuIcWzJFQzfZVKKlTjZdo6WnbErRlH5zW9YeAXELiFtA3ALiFhC3/hmkJPtERERERE6FSwkIkJ+AAAGyHBAgQJYDAgTIckCAAFkOCBAgywHZA5JsPgABAgQIECBAgAABAgQIECBAgAABAgQIECACAgQIECBAgBy/XiBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECBAgAABAgQIECCHrxcIECBAmiBd+tMeH3jg5cyQLkwqausrTKpnGcWnxkp41J3lvfUkneOQDGrtGg7Nau8SBmW1l+P4LvpAo8GWZIOpuS4nxOLiqvpM4xTNeQynru0Sk7nnOY5rHnUKyWcdUpnikPpRH26Y47VMz/mhvyZz1SYNfezZJWuzhn6KnZqzti33l9i8Lg3aobHktGGlioiIiIgM+wZVfUHJnLuLAQAAAABJRU5ErkJggg==" alt="delect-icon"/>
                     </div>
                 }
                 
