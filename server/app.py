@@ -1,5 +1,5 @@
 from flask import Flask
-from server.blueprints import blueprints
+from .blueprints import blueprints
 from flask_cors import CORS
 
 app = Flask(__name__)

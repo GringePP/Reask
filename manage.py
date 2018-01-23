@@ -1,11 +1,19 @@
-from flask_script import Manager, Server
+from flask_script import Manager
 from server.app import app
 from server.tornado_app import tornado_app_run
 
 manager = Manager(app)
 
-manager.add_command('dev', Server(host='127.0.0.1', port=5000, use_debugger=True))
-manager.add_command('tornado', tornado_app_run())
+
+@manager.command
+def flask_app():
+    app.run('127.0.0.1', 5000, debug=True)
+
+
+@manager.command
+def tornado_server():
+    tornado_app_run()
+
 
 if __name__ == '__main__':
     manager.run()

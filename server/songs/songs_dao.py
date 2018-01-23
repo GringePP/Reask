@@ -1,4 +1,4 @@
-from server.decorator import db_helper
+from ..decorator import db_helper
 
 
 def mapping_rule(item):

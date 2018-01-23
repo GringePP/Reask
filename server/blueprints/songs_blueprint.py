@@ -1,5 +1,5 @@
 from flask import Blueprint, request
-from server.songs import songs_dao as dao
+from ..songs import songs_dao as dao
 import json
 
 songs_blueprint = Blueprint(

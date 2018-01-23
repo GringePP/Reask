@@ -1,4 +1,4 @@
-from server.songs import songs_blueprint
+from .songs_blueprint import songs_blueprint
 
 blueprints = [
     songs_blueprint,
