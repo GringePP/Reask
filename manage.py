@@ -1,13 +1,13 @@
 from flask_script import Manager
-from server.app import app
+from server.app import flask_app
 from server.tornado_app import tornado_app_run
 
-manager = Manager(app)
+manager = Manager(flask_app)
 
 
 @manager.command
-def flask_app():
-    app.run('127.0.0.1', 5000, debug=True)
+def dev_server():
+    flask_app.run('127.0.0.1', 5000, debug=True)
 
 
 @manager.command
