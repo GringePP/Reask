@@ -1,6 +1,6 @@
 from flask_script import Manager
 from server.app import flask_app
-from server.tornado_app import tornado_app_run
+from server.tornado_server import tornado_server_run
 
 manager = Manager(flask_app)
 
@@ -12,7 +12,7 @@ def dev_server():
 
 @manager.command
 def tornado_server():
-    tornado_app_run()
+    tornado_server_run()
 
 
 if __name__ == '__main__':

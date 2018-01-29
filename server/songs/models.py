@@ -2,14 +2,14 @@ import sqlite3
 
 
 def drop_table():
-    with sqlite3.connect('songs.db') as conn:
+    with sqlite3.connect('server/database.db') as conn:
         cursor = conn.cursor()
         sql_drop_table = """DROP TABLE IF EXISTS songs"""
         cursor.execute(sql_drop_table)
 
 
 def create_table():
-    with sqlite3.connect('songs.db') as conn:
+    with sqlite3.connect('server/database.db') as conn:
         cursor = conn.cursor()
         sql_create_table = """
         CREATE TABLE songs(

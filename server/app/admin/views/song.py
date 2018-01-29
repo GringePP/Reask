@@ -1,10 +1,10 @@
-from flask_admin import BaseView, expose
+from flask_admin.contrib.sqla import ModelView
+from ...base_app import db, SongModel
 
 
-class Song(BaseView):
-    @expose('/')
-    def index(self):
-        return self.render('song.html')
+class Song(ModelView):
+    def is_accessible(self):
+        return True
 
 
-view = Song('Song')
+view = Song(SongModel, db.session, name='Songs', endpoint='songs')

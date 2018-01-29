@@ -3,7 +3,7 @@ from ..songs import songs_dao as dao
 import json
 
 songs_blueprint = Blueprint(
-    'songs',
+    'restful_songs',
     __name__,
     url_prefix='/api/song'
 )

@@ -5,13 +5,13 @@ def mapping_rule(item):
     return {'id': item[0], 'title': item[1], 'artist': item[2], 'poster': item[3]}
 
 
-@db_helper('server/songs/songs.db', lambda x: [mapping_rule(y) for y in x])
+@db_helper('server/database.db', lambda x: [mapping_rule(y) for y in x])
 def get_songs(conn=None):
     cursor = conn.cursor()
     return raw_get_songs(cursor)
 
 
-@db_helper('server/songs/songs.db', lambda x: [mapping_rule(y) for y in x])
+@db_helper('server/database.db', lambda x: [mapping_rule(y) for y in x])
 def add_song(data, conn=None):
     cursor = conn.cursor()
     sql_add_song = """INSERT INTO songs (title, artist, poster) VALUES (?, ?, ?)"""
@@ -19,7 +19,7 @@ def add_song(data, conn=None):
     return raw_get_songs(cursor)
 
 
-@db_helper('server/songs/songs.db', lambda x: [mapping_rule(y) for y in x])
+@db_helper('server/database.db', lambda x: [mapping_rule(y) for y in x])
 def delete_song(song_id, conn=None):
     cursor = conn.cursor()
     sql_delete_song = """DELETE FROM songs WHERE id = ?"""
