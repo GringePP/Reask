@@ -1,6 +1,5 @@
 import sqlite3
 import json
-from collections import OrderedDict
 
 
 def db_helper(db_name, mapping_rule):
@@ -22,9 +21,26 @@ def db_helper(db_name, mapping_rule):
     return wrapper
 
 
+def sqlalchemy_helper(mapper):
+    def wrapper(func):
+        def inner(*args, **kwargs):
+            try:
+                raw = func(*args, **kwargs)
+                mapped = mapper(raw)
+                response = __common_struct(mapped)
+            except Exception as e:
+                response = __common_struct(None, False, 'error: ' + str(e))
+                pass
+            return response
+
+        return inner
+
+    return wrapper
+
+
 def __common_struct(result=None, success=True, msg='error'):
     if success:
         output = {'response': result, 'status': 1, 'message': 'success'}
     else:
         output = {'response': result, 'status': 0, 'message': msg}
-    return json.dumps(OrderedDict(output))
+    return json.dumps(output)
