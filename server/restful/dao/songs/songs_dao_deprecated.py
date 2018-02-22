@@ -1,4 +1,4 @@
-from ..helper import db_helper
+from server.helper import db_helper
 
 
 def mapping_rule(item):

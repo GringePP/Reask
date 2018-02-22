@@ -1,15 +1,17 @@
-from flask import Blueprint, request
-from ..songs import song_dao as dao
 import json
 
-songs_blueprint = Blueprint(
+from flask import Blueprint, request
+
+from ..dao.songs import song_dao as dao
+
+songs_router = Blueprint(
     'restful_songs',
     __name__,
     url_prefix='/api/song'
 )
 
 
-@songs_blueprint.route('/', methods=['GET', 'POST'])
+@songs_router.route('/', methods=['GET', 'POST'])
 def collection():
     method = request.method
     if method == 'GET':
@@ -21,7 +23,7 @@ def collection():
     return json.dumps(None)
 
 
-@songs_blueprint.route('/<song_id>', methods=['PUT', 'DELETE', 'GET'])
+@songs_router.route('/<song_id>', methods=['PUT', 'DELETE', 'GET'])
 def resource(song_id):
     method = request.method
     if method == 'DELETE':
