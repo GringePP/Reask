@@ -23,6 +23,10 @@
       color: #434343;
       list-style: none;
 
+      .link-normal {
+        color: black;
+      }
+
       .link-active {
         color: $theme-color;
         font-weight: 600;

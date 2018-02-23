@@ -24,7 +24,7 @@ export default class SongCard extends StoreAwareComponent {
     render() {
         const {id, title, artist, poster} = this.props.data;
         return (
-            <div className='song-card' onMouseEnter={e => this.onMouseHover(e, true)} onMouseLeave={e => this.onMouseHover(e, false)}>
+            <div className='song-card card' onMouseEnter={e => this.onMouseHover(e, true)} onMouseLeave={e => this.onMouseHover(e, false)}>
                 <div className='poster'>
                     <div className='poster-img' style={ {backgroundImage: `url(${poster})`} }/>
                 </div>

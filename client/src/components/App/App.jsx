@@ -7,6 +7,7 @@ import AddWindow from "../SongModule/AddWindow";
 import SongModule from "../SongModule";
 import Desert from "../Desert";
 import Navbar from "../Nav/Nav";
+import Dashboard from "../Dashboard";
 
 export default class App extends StoreAwareComponent {
 
@@ -16,6 +17,7 @@ export default class App extends StoreAwareComponent {
                 <Navbar/>
                 <Switch>
                     <Route path="/song" component={ SongModule }/>
+                    <Route path="/dashboard" component={ Dashboard }/>
                     <Route path="/404" component={ Desert }/>
                     <Redirect to={ { pathname: '/404' } }/>
                 </Switch>

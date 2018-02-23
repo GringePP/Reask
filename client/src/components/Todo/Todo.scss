@@ -1,0 +1,13 @@
+.todo {
+  width: 65%;
+  height: 150px;
+  padding: 20px;
+  box-sizing: border-box;
+
+  .todo-item {
+    background-color: rgba(0, 0, 0, .05);
+    padding: 2px;
+    border-radius: 2px;
+    margin-bottom: 2px;
+  }
+}
