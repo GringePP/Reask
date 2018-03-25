@@ -6,7 +6,7 @@ import Dialog from "../Dialog";
 import AddWindow from "../SongModule/AddWindow";
 import SongModule from "../SongModule";
 import Desert from "../Desert";
-import Navbar from "../Nav/Nav";
+import Navbar from "../Nav";
 import Dashboard from "../Dashboard";
 
 export default class App extends StoreAwareComponent {
