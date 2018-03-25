@@ -4,6 +4,10 @@
   .song-card-list {
     margin: 20px auto;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
   }
 
 }
