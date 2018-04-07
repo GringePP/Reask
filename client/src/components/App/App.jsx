@@ -14,14 +14,14 @@ export default class App extends StoreAwareComponent {
     render() {
         return (
             <div className='app'>
-                <Navbar/>
+                <Navbar />
                 <Switch>
-                    <Route path="/song" component={ SongModule }/>
-                    <Route path="/dashboard" component={ Dashboard }/>
-                    <Route path="/404" component={ Desert }/>
-                    <Redirect to={ { pathname: '/404' } }/>
+                    <Route path="/song" component={SongModule} />
+                    <Route path="/dashboard" component={Dashboard} />
+                    <Route path="/404" component={Desert} />
+                    <Redirect to={{ pathname: '/404' }} />
                 </Switch>
-                <Dialog content={ <AddWindow/> }/>
+                <Dialog content={<AddWindow />} />
             </div>
         )
     }

@@ -9,18 +9,18 @@ export default class Nav extends React.Component {
             <div className="nav">
                 <div className="wrapper">
                     <div className="title">
-                        <img className="icon"/>
+                        <img className="icon" />
                         <p className="name">Reask</p>
                     </div>
                     <ul>
                         {
                             ['dashboard', 'song', '404'].map((item, index) => {
-                                return (<li key={ index }>
+                                return (<li key={index}>
                                     <NavLink
-                                        to={ { pathname: `/${item}` } }
+                                        to={{ pathname: `/${item}` }}
                                         activeClassName="link-active"
                                         className="link-normal">
-                                        { item }
+                                        {item}
                                     </NavLink>
                                 </li>)
                             })

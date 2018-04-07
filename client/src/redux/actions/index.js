@@ -6,7 +6,7 @@ export const ADD_SONG = 'ADD_SONG';
 export const DELETE_SONG = 'DELETE_SONG';
 export const TOGGLE_DIALOG = 'TOGGLE_DIALOG';
 
-const commonRequest = (type, api) => ({dispatch, getState}) => dispatch({type, api});
+const commonRequest = (type, api) => ({ dispatch, getState }) => dispatch({ type, api });
 
 export function getSongs() {
     return commonRequest(
